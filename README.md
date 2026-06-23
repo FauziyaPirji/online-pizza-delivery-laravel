@@ -1,64 +1,225 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# 🍕 Online Pizza Delivery System (Laravel)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-stack Online Pizza Delivery System developed using Laravel 8 and MySQL. The application allows customers to browse pizzas by category, manage their cart, place orders, and manage their profile. Administrators can manage pizzas, categories, users, orders, and system data through a dedicated admin dashboard.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Customer Module
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* User Registration
+* User Login & Logout
+* Forgot Password Functionality
+* Profile Management
+* Browse Pizza Categories
+* View Pizza Details
+* Search Pizzas
+* Add to Cart
+* Manage Cart Items
+* Place Orders
+* View Order History
 
-## Learning Laravel
+### Admin Module
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* Admin Login
+* Dashboard Overview
+* Manage Categories
+* Manage Pizzas
+* Manage Users
+* Manage Admins
+* Manage Orders
+* Update Order Status
+* Soft Delete / Restore Records
+* Permanent Delete Records
+* Import Users via Excel
+* Export Users to Excel
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🛠️ Technology Stack
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+* Laravel 8
+* MySQL
+* Bootstrap
+* HTML
+* CSS
+* JavaScript
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## 📋 Prerequisites
 
-## Contributing
+Install the following before running the project:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* PHP 8.x
+* Composer
+* MySQL
+* Node.js & npm (optional)
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## ⚙️ Installation
 
-## Security Vulnerabilities
+### 1. Clone Repository
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+git clone https://github.com/FauziyaPirji/online-pizza-delivery-laravel.git
+cd online-pizza-delivery-laravel
+```
 
-## License
+### 2. Install PHP Dependencies
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+composer install
+```
+
+### 3. Create Environment File
+
+```bash
+cp .env.example .env
+```
+
+For Windows:
+
+```bash
+copy .env.example .env
+```
+
+### 4. Generate Application Key
+
+```bash
+php artisan key:generate
+```
+
+### 5. Configure Database
+
+Open `.env`
+
+Update:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=pizzawebsite
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 6. Create Database
+
+Create a MySQL database named:
+
+```text
+pizzawebsite
+```
+
+### 7. Run Migrations
+
+```bash
+php artisan migrate
+```
+
+### 8. Create Storage Link
+
+This command is required for uploaded pizza images.
+
+```bash
+php artisan storage:link
+```
+
+### 9. Install Frontend Dependencies (Optional)
+
+```bash
+npm install
+```
+
+### 10. Start Development Server
+
+```bash
+php artisan serve
+```
+
+Open:
+
+```text
+http://127.0.0.1:8000
+```
+
+---
+
+## 📁 Important Commands
+
+### Clear Cache
+
+```bash
+php artisan optimize:clear
+```
+
+### Clear Config Cache
+
+```bash
+php artisan config:clear
+```
+
+### Clear Route Cache
+
+```bash
+php artisan route:clear
+```
+
+### Clear View Cache
+
+```bash
+php artisan view:clear
+```
+
+### Recreate Storage Link
+
+```bash
+php artisan storage:link
+```
+
+---
+
+## 📂 Project Structure
+
+```text
+app/
+bootstrap/
+config/
+database/
+public/
+resources/
+routes/
+storage/
+vendor/
+
+artisan
+composer.json
+package.json
+webpack.mix.js
+```
+
+---
+
+## 🔒 Security Notes
+
+Do NOT upload:
+
+```text
+.env
+vendor/
+node_modules/
+```
+
+Make sure `.gitignore` contains:
+
+```gitignore
+/vendor
+/node_modules
+/.env
+/public/storage
+```
+
